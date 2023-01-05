@@ -3,12 +3,7 @@ import os
 
 
 filePatternToHide = [
-    "*.i90",
     "*.out",
-    "*.blg",
-    "*.bbl",
-    "*.log",
-    "*.synctex.gz"
 ]
 
 

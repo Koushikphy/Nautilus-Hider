@@ -6,7 +6,7 @@ There are certain auxiliary files that are necessary for certain programs to fun
 
 
 ### Installation:
-Simply download and run the `nautilusHider.py` python code. This will install the necessary scripts in the nautilus scripts folder. Additionally, you can specify certain file patterns in the python code that you always want to be hidden."
+Simply download and run the [`nautilusHider.py`](https://github.com/Koushikphy/Nautilus-Hider/blob/main/natilusHider.py) python code. This will install the necessary scripts in the nautilus scripts folder. Additionally, you can specify certain file patterns in the python code that you always want to be hidden."
 
 
 ### Usage:
