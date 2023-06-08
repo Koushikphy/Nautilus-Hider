@@ -1,6 +1,13 @@
 ## Nautilus Hider
 #### Easily hide files and folder in nautilus file manager
 
+
+https://github.com/Koushikphy/Nautilus-Hider/assets/43264301/9f4e77ae-efd8-4eb2-8402-9626426d435d
+
+
+
+
+
 ### Background motivation
 There are certain auxiliary files that are necessary for certain programs to function properly, but may not be necessary for humans to view. It is often best to keep these files hidden. However, hiding files in [Nautilus file manager](https://en.wikipedia.org/wiki/GNOME_Files) can be difficult. There are two options: (a) You can rename the file by adding a `.` to the beginning of the file name, but this may cause issues with certain programs. (b) You can create a `.hidden` file and include the name of the file within it. However, this method requires the exact full name of the file, glob patterns do not work, and it also does not work for subdirectories. This code streamlines the process of creating `.hidden` files by adding a right-click context menu option.
 
