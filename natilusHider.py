@@ -1,6 +1,11 @@
 from pathlib import Path 
-import os 
+import os, sys
 
+
+if sys.version_info<(3,6):
+    raise Exception("Python version 3.6 or above is required")
+
+exec_loc = sys.executable
 
 filePatternToHide = [
     "*.out",
@@ -25,11 +30,11 @@ hidallFile = f"{rootDir}/hideAll.py"
 
 # create a `.hidden` file and hide the selected files
 with open(hidFile,'w') as f:
-    f.write('''#!/usr/bin/env python
+    f.write(f'''#!{exec_loc}
 
 import os, sys
 
-hidPath = f"{os.getcwd()}/.hidden"
+hidPath = f"{{os.getcwd()}}/.hidden"
 
 filesToHide ='\\n' + '\\n'.join(sys.argv[1:])
 
@@ -40,11 +45,11 @@ with open(hidPath, 'a' if os.path.exists(hidPath) else 'w') as f:
 
 # just delet the `.hidden` file
 with open(unhidFile,'w') as f:
-    f.write('''#!/usr/bin/env python
+    f.write(f'''#!{exec_loc}
 
 import os
 
-hidPath = f"{os.getcwd()}/.hidden"
+hidPath = f"{{os.getcwd()}}/.hidden"
 if os.path.exists(hidPath):
     os.remove(hidPath)
 ''')
@@ -54,7 +59,7 @@ if os.path.exists(hidPath):
 
 # glob the pattern and hide 
 with open(hidallFile,'w') as f:
-    f.write(f'''#!/usr/bin/env python
+    f.write(f'''#!{exec_loc}
 
 import os
 from glob import glob
